@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>加入台中租屋社團</title>
-  <meta name="description" content="用 Facebook App 開啟台中租屋資訊交流社團。">
+  <meta name="description" content="加入台中租屋資訊交流社團，iPhone 也能照提示順利進入。">
   <style>
     :root {
       --bg: #0f172a;
-      --card: rgba(15, 23, 42, 0.88);
+      --card: rgba(15, 23, 42, 0.9);
       --text: #e5e7eb;
       --muted: #94a3b8;
       --btn: #1877f2;
       --btn-hover: #1664d9;
+      --ghost: rgba(255,255,255,.06);
+      --ghost-hover: rgba(255,255,255,.1);
       --line: rgba(255,255,255,.08);
+      --ok: #93c5fd;
     }
     * { box-sizing: border-box; }
     body {
@@ -21,19 +24,18 @@
       min-height: 100vh;
       display: grid;
       place-items: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b, #0f172a 58%);
-      color: var(--text);
       padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #1e293b, #0f172a 58%);
     }
     .card {
-      width: min(100%, 440px);
+      width: min(100%, 460px);
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 28px 22px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,.35);
       backdrop-filter: blur(8px);
     }
     .eyebrow {
@@ -41,7 +43,7 @@
       padding: 6px 10px;
       border-radius: 999px;
       background: rgba(24,119,242,.14);
-      color: #93c5fd;
+      color: var(--ok);
       font-size: 12px;
       margin-bottom: 14px;
     }
@@ -51,35 +53,63 @@
       line-height: 1.2;
     }
     p {
-      margin: 0 0 18px;
+      margin: 0;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.7;
       font-size: 15px;
+    }
+    .lead { margin-bottom: 18px; }
+    .tip {
+      margin: 16px 0 18px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+    .steps {
+      margin: 0 0 18px;
+      padding-left: 20px;
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 14px;
     }
     .button {
       display: inline-block;
       width: 100%;
+      text-align: center;
       text-decoration: none;
-      background: var(--btn);
-      color: white;
       font-weight: 700;
       padding: 16px 18px;
       border-radius: 14px;
       transition: .18s ease;
-      margin-top: 8px;
+      margin-top: 10px;
     }
-    .button:hover { background: var(--btn-hover); }
-    .hint {
-      margin-top: 16px;
+    .button.primary {
+      background: var(--btn);
+      color: #fff;
+    }
+    .button.primary:hover { background: var(--btn-hover); }
+    .button.secondary {
+      background: var(--ghost);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .button.secondary:hover { background: var(--ghost-hover); }
+    .copied {
+      margin-top: 12px;
+      min-height: 20px;
+      font-size: 13px;
+      color: var(--ok);
+    }
+    .footnote {
+      margin-top: 14px;
       font-size: 13px;
       color: var(--muted);
-    }
-    .fallback {
-      display: inline-block;
-      margin-top: 10px;
-      color: #93c5fd;
-      font-size: 14px;
-      text-decoration: none;
+      line-height: 1.6;
+      text-align: center;
     }
   </style>
 </head>
@@ -87,26 +117,38 @@
   <main class="card">
     <div class="eyebrow">租屋超人｜陪你在台中住下來</div>
     <h1>加入台中租屋資訊交流社團</h1>
-    <p>點下面按鈕，會優先嘗試用 Facebook App 打開社團；如果手機沒成功跳轉，系統會自動改開網頁版。</p>
-    <a class="button" id="openGroup" href="https://www.facebook.com/groups/househelper">用 Facebook App 打開社團</a>
-    <a class="fallback" href="https://www.facebook.com/groups/househelper">還是沒跳轉？直接開網頁版</a>
-    <div class="hint">如果你是從 Threads 點進來，這個頁面通常會比直接貼 Facebook 連結更順。</div>
+    <p class="lead">如果你是從 Threads 用 iPhone 點進來，有時候不會直接跳 Facebook App，這是正常的，不是你手機壞掉。</p>
+
+    <div class="tip">
+      <strong>iPhone 建議這樣做：</strong><br>
+      先點下面的「前往社團」，如果還是在 Threads 內建瀏覽器，請再點右上角，用 Safari 開啟，通常會比較順。
+    </div>
+
+    <ol class="steps">
+      <li>先點「前往社團」</li>
+      <li>如果還在 Threads 內，點右上角分享/更多</li>
+      <li>選「用 Safari 開啟」後再進 Facebook</li>
+    </ol>
+
+    <a class="button primary" href="https://www.facebook.com/groups/househelper" rel="noopener">前往社團</a>
+    <button class="button secondary" id="copyLink" type="button">複製社團連結</button>
+    <div class="copied" id="copiedMessage"></div>
+
+    <div class="footnote">社團裡有更多台中租屋真實案例、區域討論與避雷資訊。</div>
   </main>
 
   <script>
-    const appUrl = 'fb://group/?id=2369902946566944';
     const webUrl = 'https://www.facebook.com/groups/househelper';
-    const btn = document.getElementById('openGroup');
+    const copyButton = document.getElementById('copyLink');
+    const copiedMessage = document.getElementById('copiedMessage');
 
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const start = Date.now();
-      window.location.href = appUrl;
-      setTimeout(function () {
-        if (Date.now() - start < 1700) {
-          window.location.href = webUrl;
-        }
-      }, 1200);
+    copyButton.addEventListener('click', async function () {
+      try {
+        await navigator.clipboard.writeText(webUrl);
+        copiedMessage.textContent = '已複製社團連結，可以直接貼到 Safari 或傳給自己。';
+      } catch (err) {
+        copiedMessage.textContent = '複製失敗，請長按這個網址：' + webUrl;
+      }
     });
   </script>
 </body>
