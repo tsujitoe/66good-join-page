@@ -3,153 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>加入台中租屋社團</title>
-  <meta name="description" content="加入台中租屋資訊交流社團，iPhone 也能照提示順利進入。">
+  <title>66good.tw</title>
+  <meta name="robots" content="noindex,nofollow">
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: rgba(15, 23, 42, 0.9);
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --btn: #1877f2;
-      --btn-hover: #1664d9;
-      --ghost: rgba(255,255,255,.06);
-      --ghost-hover: rgba(255,255,255,.1);
-      --line: rgba(255,255,255,.08);
-      --ok: #93c5fd;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #1e293b, #0f172a 58%);
-    }
-    .card {
-      width: min(100%, 460px);
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 28px 22px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.35);
-      backdrop-filter: blur(8px);
-    }
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(24,119,242,.14);
-      color: var(--ok);
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-    h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      line-height: 1.2;
-    }
-    p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    .lead { margin-bottom: 18px; }
-    .tip {
-      margin: 16px 0 18px;
-      padding: 14px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-      font-size: 14px;
-      color: #cbd5e1;
-      line-height: 1.65;
-    }
-    .steps {
-      margin: 0 0 18px;
-      padding-left: 20px;
-      color: #cbd5e1;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-    .button {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 16px 18px;
-      border-radius: 14px;
-      transition: .18s ease;
-      margin-top: 10px;
-    }
-    .button.primary {
-      background: var(--btn);
-      color: #fff;
-    }
-    .button.primary:hover { background: var(--btn-hover); }
-    .button.secondary {
-      background: var(--ghost);
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-    .button.secondary:hover { background: var(--ghost-hover); }
-    .copied {
-      margin-top: 12px;
-      min-height: 20px;
-      font-size: 13px;
-      color: var(--ok);
-    }
-    .footnote {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      text-align: center;
-    }
+    body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Segoe UI",sans-serif;background:#f7f7f7;color:#222;margin:0;display:grid;place-items:center;min-height:100vh}
+    .card{background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:32px;max-width:560px;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+    h1{margin:0 0 12px;font-size:28px}
+    p{margin:0 0 10px;line-height:1.7;color:#555}
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="eyebrow">租屋超人｜陪你在台中住下來</div>
-    <h1>加入台中租屋資訊交流社團</h1>
-    <p class="lead">如果你是從 Threads 用 iPhone 點進來，有時候不會直接跳 Facebook App，這是正常的，不是你手機壞掉。</p>
-
-    <div class="tip">
-      <strong>iPhone 建議這樣做：</strong><br>
-      先點下面的「前往社團」，如果還是在 Threads 內建瀏覽器，請再點右上角，用 Safari 開啟，通常會比較順。
-    </div>
-
-    <ol class="steps">
-      <li>先點「前往社團」</li>
-      <li>如果還在 Threads 內，點右上角分享/更多</li>
-      <li>選「用 Safari 開啟」後再進 Facebook</li>
-    </ol>
-
-    <a class="button primary" href="https://www.facebook.com/groups/househelper" rel="noopener">前往社團</a>
-    <button class="button secondary" id="copyLink" type="button">複製社團連結</button>
-    <div class="copied" id="copiedMessage"></div>
-
-    <div class="footnote">社團裡有更多台中租屋真實案例、區域討論與避雷資訊。</div>
+    <h1>網站調整中</h1>
+    <p>66good.tw/join 目前暫時關閉，正在重新整理設定。</p>
+    <p>完成後會再提供新的正式入口網址。</p>
   </main>
-
-  <script>
-    const webUrl = 'https://www.facebook.com/groups/househelper';
-    const copyButton = document.getElementById('copyLink');
-    const copiedMessage = document.getElementById('copiedMessage');
-
-    copyButton.addEventListener('click', async function () {
-      try {
-        await navigator.clipboard.writeText(webUrl);
-        copiedMessage.textContent = '已複製社團連結，可以直接貼到 Safari 或傳給自己。';
-      } catch (err) {
-        copiedMessage.textContent = '複製失敗，請長按這個網址：' + webUrl;
-      }
-    });
-  </script>
 </body>
 </html>
