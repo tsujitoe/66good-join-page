@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>加入台中租屋社團</title>
+  <meta name="description" content="用 Facebook App 開啟台中租屋資訊交流社團。">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(15, 23, 42, 0.88);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --btn: #1877f2;
+      --btn-hover: #1664d9;
+      --line: rgba(255,255,255,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b, #0f172a 58%);
+      color: var(--text);
+      padding: 24px;
+    }
+    .card {
+      width: min(100%, 440px);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(24,119,242,.14);
+      color: #93c5fd;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    .button {
+      display: inline-block;
+      width: 100%;
+      text-decoration: none;
+      background: var(--btn);
+      color: white;
+      font-weight: 700;
+      padding: 16px 18px;
+      border-radius: 14px;
+      transition: .18s ease;
+      margin-top: 8px;
+    }
+    .button:hover { background: var(--btn-hover); }
+    .hint {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .fallback {
+      display: inline-block;
+      margin-top: 10px;
+      color: #93c5fd;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">租屋超人｜陪你在台中住下來</div>
+    <h1>加入台中租屋資訊交流社團</h1>
+    <p>點下面按鈕，會優先嘗試用 Facebook App 打開社團；如果手機沒成功跳轉，系統會自動改開網頁版。</p>
+    <a class="button" id="openGroup" href="https://www.facebook.com/groups/househelper">用 Facebook App 打開社團</a>
+    <a class="fallback" href="https://www.facebook.com/groups/househelper">還是沒跳轉？直接開網頁版</a>
+    <div class="hint">如果你是從 Threads 點進來，這個頁面通常會比直接貼 Facebook 連結更順。</div>
+  </main>
+
+  <script>
+    const appUrl = 'fb://group/?id=2369902946566944';
+    const webUrl = 'https://www.facebook.com/groups/househelper';
+    const btn = document.getElementById('openGroup');
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const start = Date.now();
+      window.location.href = appUrl;
+      setTimeout(function () {
+        if (Date.now() - start < 1700) {
+          window.location.href = webUrl;
+        }
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
